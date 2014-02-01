@@ -18,52 +18,51 @@ app.get('/', function(request, response) {
   response.sendfile('index.html', { 'root': app.sourcePath + '/client'});
 });
 
-
 // get details of a specific room
 app.get('/rooms/:id', function(request, response){
   console.log('You want room with id', request.params.id);
 
-  resource = { name: 'rooms', select: { 'id': request.params.id } };
-  db.findResource(resource)
-  .then(function(errMsg) {
-   send404(request, response, errMsg);
- })
-  .then( function(data) {
-    console.log(data);
-    response.send(data);
-  });
-});
-
-// get messages for a specific room
-app.get('/rooms/:id/messages', function(request, response){
-  console.log('You want room with id', request.params.id);
-
-  resource = { name: 'messages', select: { 'room_id': request.params.id } };
-
-  db.findResource(resource)
+  //var resource = { name: 'rooms', select: { 'id': request.params.id } };
+  db.searchRelation(['rooms'], null, {id: [request.params.id]})
   .then( function(data) {
     console.log(data);
     response.send(data);
   })
-  .then( function(errMsg) {
+  .fail(function(errMsg) {
    send404(request, response, errMsg);
  });
 });
 
+// get messages for a specific room
+app.get('/rooms/:id/messages', function(request, response){
 
-// get list of all messages
-app.get(/^\/(rooms|messages)/, function(request, response){
-  resource = request.url.slice(1);
-  db.findResource(resource, function(errMsg) {
+  //var resource = {name:'messages', select: { 'room_id': request.params.id } };
+
+  db.searchRelation('messages', ['rooms', 'users'], {room_id: [request.params.id]} )
+  .then( function(data) {
+    //console.log(data);
+    response.send(data);
+  })
+  .fail( function(errMsg) {
    send404(request, response, errMsg);
- }, function(data) {
-  response.send(data);
+ });
 });
+
+// get list of all user, rooms or messages
+app.get(/^\/(users|rooms|messages)/, function(request, response){
+  var resource = request.url.slice(1);
+  db.searchRelation(resource, null, null)
+  .then(function(data) {
+    response.send(data);
+   })
+  .fail( function(errMsg) {
+    send404(request, response, errMsg);
+   });
 });
 
 // create a room
 app.post('/rooms', function(request, response){
-  resource = request.url.slice(1);
+  var resource = request.url.slice(1);
   console.log('app.post: ', request.body);
   db.storeResource(resource, request.body, function(errMsg) {
    send404(request, response, errMsg);
@@ -74,7 +73,7 @@ app.post('/rooms', function(request, response){
 
 // post a message
 app.post('/messages', function(request, response){
-  resource = { name: 'rooms', select: { 'roomname': request.url.slice(1) } };
+  var resource = { name: 'rooms', select: { 'roomname': request.url.slice(1) } };
   db.storeResource(resource, request.body, function(errMsg) {
     send404(request, response, errMsg);
   }, function(data) {

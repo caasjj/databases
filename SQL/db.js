@@ -14,20 +14,44 @@ dbConnection.connect(function(err) {
   }
 });
 
-var searchDb = function( table, select, cb ) {
+var searchRelation = exports.searchRelation = function(table, joins, selector) {
+  var deferred = Q.defer();
   var queryString = 'SELECT * FROM ?? ';
-  var inserts = [ table ];
-  var keys = (typeof select === 'object') && Object.keys(select);
   
-  if ( keys.length  > 1 ) {
-      err('"searchDb->db.findResource(resource, err, cb)": "select" must be {} or have single property.');
+  joins = Array.isArray(joins) ? joins : (joins ? [joins] : []);
+  table = Array.isArray(table) ? table : [table];
+  console.log('Tble: ', table, 'Joins: ', joins);
+  queryString = 'SELECT * from ' +  table.concat(joins).join(',');
+ // console.log(queryString);
+  if (joins && joins.length > 0) {
+    console.log(joins);
+    table_join_ids = joins.map( function(j) { return table[0]+'.'+j.slice(0,j.length-1)+'_id'} );
+    join_ids = joins.map( function(j) { return j + '.id'} );
+    queryString += ' WHERE (' + table_join_ids.join(',') + ') = (' +  join_ids.join(',') + ')';
   }
-  if ( keys.length ) {
-    inserts = inserts.concat(keys[0], [ select[ keys[0] ]]);
-    queryString += 'WHERE ?? = ?';
+  if (selector && Object.keys(selector).length > 0) {
+    //console.log('Selector: ', selector);
+    for( p in selector) {
+      if (selector[p].length) {
+        if (joins.length) {
+          queryString += ' AND ';
+         } else {
+           queryString += ' WHERE ';
+         }
+        queryString += p + ' IN ' + '(' + selector[p].join(',') + ')';
+      }  
+    }
   }
-  queryString = mysql.format( queryString, inserts );
-  dbConnection.query(queryString, cb) ; 
+  queryString += ';';
+  //console.log(queryString);
+  dbConnection.query(queryString, function(err, data) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(data);
+    }
+  }) ; 
+  return deferred.promise;
 };
 
 var storeToDb = function(table, data, err, cb) {
@@ -41,43 +65,8 @@ var storeToDb = function(table, data, err, cb) {
   });
 };
 
-var validateReadRequest = function(resource) {
-  var params = {};
-
-  if (typeof resource === 'string' ) {
-    if (['rooms', 'messages', 'users'].indexOf(resource) < 0) {
-      err('db.validateRequest(resource, err, cb): string "resource" must be "messages"|"rooms"|"users"\n');
-    }
-    params.name = resource;
-    params.select = {};
-  } else {
-    var p = Object.keys( resource );
-    if( (p.length !== 2) || !resource.hasOwnProperty('name') || !resource.hasOwnProperty('select') ) {
-      err('db.validateRequest(resource, err, cb): Object "resource" must have string "name" and object "select" parameters\n' );
-    }
-    if (['rooms', 'messages', 'users'].indexOf(resource.name) < 0) {
-      err('db.validateRequest(resource, err, cb): string "resource.name" must be "messages"|"rooms"|"users"\n');
-    }
-    params = resource;
-  }
-  return params;
-};
-
-exports.findResource = function(resource) {
-  var deferred = Q.defer();
-  var params = validateReadRequest(resource);
-  searchDb( params.name, params.select, function(err, data) {
-      if (err) {
-        deferred.reject( err );
-      } else {
-        deferred.resolve(data);
-      }
-    });
-  return deferred.promise;
-};
-
-exports.storeResource = function(resource, data, err, cb) {
-  console.log('Storing ', data, 'to resource', resource + '\n');
+var storeResource = exports.storeResource = function(resource, data, err, cb) {
+  //console.log('Storing ', data, 'to resource', resource + '\n');
   storeToDb( resource, data, err, cb);
 };
 

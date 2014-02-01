@@ -1,0 +1,723 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"search",
+				"searchDb"
+			],
+			[
+				"dB",
+				"dbConnection"
+			],
+			[
+				"query",
+				"queryString"
+			],
+			[
+				"db",
+				"dbConnection"
+			],
+			[
+				"minArr",
+				"minArrayLoc"
+			],
+			[
+				"min",
+				"minArrayLoc"
+			],
+			[
+				"minA",
+				"minArrayVal"
+			],
+			[
+				"child",
+				"children"
+			],
+			[
+				"pla",
+				"playedSofar"
+			],
+			[
+				"con",
+				"constructor"
+			],
+			[
+				"rock",
+				"rockPaperScissors"
+			],
+			[
+				"set",
+				"setPosition"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"time",
+				"timeBetweenSteps"
+			],
+			[
+				"ol",
+				"oldStep"
+			],
+			[
+				"in",
+				"inOrder"
+			],
+			[
+				"b",
+				"binarySearchTreeSpec"
+			],
+			[
+				"bin",
+				"binarySearchTree"
+			],
+			[
+				"ch",
+				"children"
+			],
+			[
+				"add",
+				"addChild"
+			],
+			[
+				"li",
+				"linkedList"
+			],
+			[
+				"s",
+				"storage"
+			],
+			[
+				"not",
+				"notStrictEqual"
+			],
+			[
+				"reIn",
+				"reIndexArray"
+			],
+			[
+				"stack",
+				"stackSize"
+			],
+			[
+				"stac",
+				"stackSize"
+			],
+			[
+				"Stack",
+				"stackSize"
+			],
+			[
+				"queue",
+				"queueMethods"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "SQL/schema.sql",
+			"settings":
+			{
+				"buffer_size": 255,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SQL/persistent_server.js",
+			"settings":
+			{
+				"buffer_size": 2163,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SQL/html/200.html",
+			"settings":
+			{
+				"buffer_size": 153,
+				"line_ending": "Unix",
+				"name": "404.html"
+			}
+		},
+		{
+			"file": "/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/server/basic-server.js",
+			"settings":
+			{
+				"buffer_size": 1460,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SQL/spec/LiveSpec.js",
+			"settings":
+			{
+				"buffer_size": 3427,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/server/express-server.js",
+			"settings":
+			{
+				"buffer_size": 1369,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SQL/db.js",
+			"settings":
+			{
+				"buffer_size": 3249,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "SQL/schema.sql",
+			"settings":
+			{
+				"buffer_size": 980,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				":q",
+				"Set Syntax: SQL"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Try .. Catch"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/walid/Sites/HackReactor/2014-01-databases/SQL/messages.sql",
+		"/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/client/scripts/config.js",
+		"/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/client/scripts/message.js",
+		"/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/client/scripts/view.js",
+		"/Users/walid/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/server/express-server.js",
+		"/Users/walid/Sites/HackReactor/2014-01-databases/SQL/spec/LiveSpec.js",
+		"/Users/walid/Library/Application Support/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproblems/testBreadthFirst.js",
+		"/Users/walid/Sites/HackReactor/2014-01-toy-problems/treeBFSelect/treeBFSelect.js",
+		"/Users/walid/Sites/HackReactor/2014-01-toy-problems/coinSums/coinSums.js",
+		"/Users/walid/Sites/HackReactor/2014-01-self-assessments-week-02/js-inheritance-pseudo-classical/js-inheritance-pseudo-classical.js",
+		"/Users/walid/Sites/HackReactor/2014-01-self-assessments-week-02/algo-find-dup-char/algo-find-dup-char.js",
+		"/Users/walid/Sites/HackReactor/2014-01-watchout/js/watchout_solution.html",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproblems/test.html",
+		"/Users/walid/Sites/HackReactor/2014-01-toy-problems/insertionSort/insertionSort.js",
+		"/Users/walid/Sites/HackReactor/2014-01-toy-problems/treeCountLeaves/treeCountLeaves.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproblems/test.js",
+		"/Users/walid/Sites/HackReactor/2014-01-toy-problems/evenOccurrence/evenOccurrence.js",
+		"/Users/walid/Sites/HackReactor/2014-01-toy-problems/rockPaperScissors/rockPaperScissors.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproblems/evenOccurrence.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproblems/rockpaperscissors.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproglems/rockpaperscissors.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproglems/evenOccurrence.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproglems/test.js",
+		"/Users/walid/Desktop/toyproblem.sublime-workspace",
+		"/Users/walid/Sites/HackReactor/selfstudy/toyproglems/test.html",
+		"/Users/walid/Sites/HackReactor/2014-01-n-queens/SpecRunner.html",
+		"/Users/walid/Sites/HackReactor/2014-01-n-queens/BoardViewer.html",
+		"/Users/walid/Sites/HackReactor/2014-01-n-queens/src/Board.js",
+		"/Users/walid/Sites/CodeRunner/CoderByte/fibandhash",
+		"/Users/walid/Sites/CodeRunner/CoderByte/rockpaperscissors2.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/src/dancer.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/dancefloor.html",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/src/colorDancer.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-subclass-dance-party/src/blinkyDancer.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/spec/blinkyDancerSpec.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-subclass-dance-party/spec/blinkyDancerSpec.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/src/blinkyDancer.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/src/tree.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-subclass-dance-party/dancefloor.html",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-subclass-dance-party/src/dancer.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-subclass-dance-party/src/flyingDancer.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/src/MovingDancer.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/src/flyingDancer.js",
+		"/Users/walid/Sites/HackReactor/2014-01-subclass-dance-party/styles.css",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/src/tree.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/src/binarySearchTree.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/src/binarySearchTree.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/spec/binarySearchTreeSpec.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/SpecRunner.html",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/src/hashTable.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/src/graph.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/spec/treeSpec.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/spec/binarySearchTreeSpec.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/spec/linkedListSpec.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/src/linkedList.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/spec/hashTableSpec.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/src/hashTableHelpers.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-two/src/set.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/functional-shared/queue.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/functional-shared/stack.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/functional/queue.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/functional/stack.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/pseudoclassical/queue.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/pseudoclassical/stack.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/prototypal/queue.js",
+		"/Users/walid/Sites/HackReactor/selfstudy/2014-01-data-structures/sprint-one/src/prototypal/stack.js",
+		"/Users/walid/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/prototypal/queue.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/functional/queue.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/functional/stack.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/src/hashTable.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/functional-shared/queue.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/pseudoclassical/stack.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/pseudoclassical/queue.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/functional-shared/stack.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/src/prototypal/stack.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/spec/linkedListSpec.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/SpecRunner.html",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/src/linkedList.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/spec/setSpec.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/spec/treeSpec.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-two/src/set.js",
+		"/Users/walid/Sites/HackReactor/2014-01-data-structures/sprint-one/spec/specs.js",
+		"/Users/walid/Sites/HackReactor/self-assess-wk0/2014-01-self-assessments-week-0/recursion-divs/README.md",
+		"/Users/walid/Sites/HackReactor/self-assess-wk0/2014-01-self-assessments-week-0/underbar-each-defaults-once-contains/README.md",
+		"/Users/walid/Sites/HackReactor/self-assess-wk0/2014-01-self-assessments-week-0/underbar-each-defaults-once-contains/underbar-each-defaults-once-contains.js",
+		"/Users/walid/Sites/HackReactor/self-assess-wk0/2014-01-self-assessments-week-0/recursion-divs/recursion-divs.js",
+		"/Users/walid/Sites/HackReactor/self-assess-wk0/2014-01-self-assessments-week-0/underbar-each-defaults-once-contains/test.html",
+		"/Users/walid/Sites/HackReactor/2014-01-underbar/src/underbar.js",
+		"/Users/walid/Sites/HackReactor/self-assess-wk0/2014-01-underbar/src/underbar.js",
+		"/Users/walid/Sites/HackReactor/2014-01-underbar/spec/underbarSpec.js",
+		"/Users/walid/Sites/HackReactor/2014-01-recursion/src/parseJSON.js",
+		"/Users/walid/Sites/HackReactor/2014-01-recursion/src/getElementsByClassName.js",
+		"/Users/walid/Sites/Coffeescript/hello.coffee",
+		"/Users/walid/Sites/Ruby/bootcamp/app/controllers/application_controller.rb",
+		"/Users/walid/Sites/Ruby/bootcamp/app/controllers/bikes_controller.rb",
+		"/Users/walid/Sites/Ruby/findmybike/app/controllers/static_controller.rb",
+		"/Users/walid/Sites/Ruby/findmybike/config/database.yml",
+		"/Users/walid/Sites/Ruby/bootcamp/Gemfile",
+		"/Users/walid/Sites/Ruby/bootcamp/db/seeds.rb",
+		"/Users/walid/Sites/Ruby/findmybike/app/views/layouts/application.html.erb",
+		"/Users/walid/Sites/Ruby/findmybike/app/assets/stylesheets/static.css.scss",
+		"/Users/walid/Sites/Ruby/findmybike/app/assets/stylesheets/application.scss",
+		"/Users/walid/Sites/Ruby/findmybike/app/views/static/home.html.erb",
+		"/Users/walid/Sites/Ruby/findmybike/app/views/static/_map.html.erb",
+		"/Users/walid/Sites/Ruby/bootcamp/app/views/static/home.html.erb",
+		"/Users/walid/Sites/Ruby/findmybike/config/routes.rb",
+		"/Users/walid/Sites/Ruby/findmybike/Gemfile",
+		"/Users/walid/Sites/Ruby/findmybike/app/assets/javascripts/application.js",
+		"/Users/walid/Sites/Ruby/findmybike/app/controllers/application_controller.rb",
+		"/Users/walid/Sites/HLU/Frameworks/js/jquery-min-2.0.2.js",
+		"/Users/walid/Sites/HLU/ThuWeek2/jquery-2.0.2.min.map",
+		"/Users/walid/Sites/Node/webserver.js",
+		"/Users/walid/Sites/Node/fs.js",
+		"/Applications/MAMP/bin/php/php5.4.4/conf/php.ini",
+		"/Users/walid/Sites/PHP/TEST/public_html/index.php",
+		"/Users/walid/Sites/PHP/TEST/templates/slim.html",
+		"/Users/walid/Sites/PHP/TEST/vendor/slim/extras/Slim/Extras/Views/Mustache.php",
+		"/Users/walid/Sites/PHP/TEST/public_html/js/mustache.js",
+		"/Users/walid/Sites/PHP/TEST/templates/mustache.html",
+		"/Users/walid/Sites/PHP/TEST/public_html/js/bootstrap.js",
+		"/Users/walid/Sites/PHP/TEST/templates/minimal.html",
+		"/Users/walid/Sites/PHP/TEST/templates/index.html",
+		"/Users/walid/Sites/PHP/TEST/.gitignore",
+		"/Users/walid/Sites/PHP/TEST/composer.json",
+		"/Users/walid/Sites/fileupload.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"cb",
+			"console",
+			"cons",
+			"if",
+			"new",
+			"ignored",
+			"vim",
+			"trav",
+			"instance.",
+			"storage",
+			"head",
+			"instance._",
+			"this",
+			"size",
+			"xdebug",
+			"slimPhp",
+			"../assets/",
+			"YAHOO.myProject.",
+			"YAHOO.log",
+			"YAHOO"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Stack.prototype.",
+			"instance",
+			"size",
+			"",
+			"instance",
+			"stackSize",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "SQL/schema.sql",
+					"settings":
+					{
+						"buffer_size": 255,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SQL/SQL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "SQL/persistent_server.js",
+					"settings":
+					{
+						"buffer_size": 2163,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1082,
+								1082
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "SQL/html/200.html",
+					"settings":
+					{
+						"buffer_size": 153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"auto_name": "404.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/server/basic-server.js",
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "SQL/spec/LiveSpec.js",
+					"settings":
+					{
+						"buffer_size": 3427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3339,
+								3369
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 765.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/walid/Sites/HackReactor/2014-01-chatterbox-server/server/express-server.js",
+					"settings":
+					{
+						"buffer_size": 1369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								933,
+								933
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 4.0,
+						"translation.y": 50.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "SQL/db.js",
+					"settings":
+					{
+						"buffer_size": 3249,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1425,
+								1425
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 451.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "SQL/schema.sql",
+					"settings":
+					{
+						"buffer_size": 980,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								145,
+								145
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/SQL/SQL.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.396444645037,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true
+}
