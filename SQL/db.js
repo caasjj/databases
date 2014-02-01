@@ -8,26 +8,24 @@ var dbConnection = mysql.createConnection({
     });
 
 dbConnection.connect(function(err) {
-        if(err) {
-          throw new Error('Cannot connect to database:', err);
-        }
-    });
+  if(err) {
+    throw new Error('Cannot connect to database:', err);
+  }
+});
 
 var searchDb = function( table, select, err, cb ) {
-  
   var queryString = 'SELECT * FROM ?? ';
   var inserts = [ table ];
   var keys = (typeof select === 'object') && Object.keys(select);
   
   if ( keys.length  > 1 ) {
-      err('"searchDb->db.findResource(table, select, err, cb): "select" must be {} or have single property.');
+      err('"searchDb->db.findResource(resource, err, cb)": "select" must be {} or have single property.');
   }
   if ( keys.length ) {
     inserts = inserts.concat(keys[0], [ select[ keys[0] ]]);
     queryString += 'WHERE ?? = ?';
   }
   queryString = mysql.format( queryString, inserts );
-  //console.log(queryString);
   dbConnection.query(queryString, function(error, data) {
     if (error) {
       err( error );
@@ -41,9 +39,9 @@ var storeToDb = function(table, data, err, cb) {
   var queryString = 'INSERT into ' + table + ' SET ?';
   dbConnection.query( queryString, data, function(error, result) {
       if (error) {
-        console.log( ' POST ERROR !!');
+        err('"storeToDb->db.storeResource(resource, data, err, cb)": "write failed"\n');
       } else {
-        console.log('POST Complete: ', result);
+        cb( result );
       }
   });
 };
