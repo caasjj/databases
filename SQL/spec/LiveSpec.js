@@ -10,18 +10,19 @@ describe("Persistent Node Chat Server", function() {
   beforeEach(function(done) {
     dbConnection = mysql.createConnection({
     /* TODO: Fill this out with your mysql username */
-      user: "",
+      user: "tester",
     /* and password. */
-      password: "",
+      password: "test",
       database: "chat"
     });
     dbConnection.connect();
 
-    var tablename = ""; // TODO: fill this out
+    var tablename = "messages"; // TODO: fill this out
 
     /* Empty the db table before each test so that multiple tests
      * (or repeated runs of the tests) won't screw each other up: */
-    dbConnection.query("DELETE FROM " + tablename, done);
+    //dbConnection.query("DELETE FROM " + tablename, done);
+    dbConnection.query('Select * from messages', done);
   });
 
   afterEach(function() {
@@ -29,18 +30,21 @@ describe("Persistent Node Chat Server", function() {
   });
 
   it("Should insert posted messages to the DB", function(done) {
+
     // Post a message to the node chat server:
-    request({method: "POST",
+    request( {method: "POST",
              uri: "http://127.0.0.1:8080/classes/room1",
-             form: {username: "Valjean",
-                    message: "In mercy's name, three days is all I need."}
-            },
+             form: { username: "Valjean",
+                     message: "In mercy's name, three days is all I need."
+                   }
+             },
+
             function(error, response, body) {
               /* Now if we look in the database, we should find the
                * posted message there. */
+              var queryString = 'SELECT * FROM messages';
+              var queryArgs; // = {username: "Valjean"};
 
-              var queryString = "";
-              var queryArgs = [];
               /* TODO: Change the above queryString & queryArgs to match your schema design
                * The exact query string and query args to use
                * here depend on the schema you design, so I'll leave
@@ -48,6 +52,7 @@ describe("Persistent Node Chat Server", function() {
               dbConnection.query( queryString, queryArgs,
                 function(err, results, fields) {
                   // Should have one result:
+                  console.log('Results: ', results[0].username, ' ', results[0].message);
                   expect(results.length).toEqual(1);
                   expect(results[0].username).toEqual("Valjean");
                   expect(results[0].message).toEqual("In mercy's name, three days is all I need.");
@@ -62,6 +67,7 @@ describe("Persistent Node Chat Server", function() {
 
   it("Should output all messages from the DB", function(done) {
     // Let's insert a message into the db
+    console.log('second query sent');
     var queryString = "";
     var queryArgs = ["Javert", "Men like you can never change!"];
     /* TODO - The exact query string and query args to use

@@ -1,0 +1,14 @@
+{
+  "name": "chatterbox-server",
+  "description": "express chatterbox server",
+  "version": "0.0.1",
+  "main": "server/express-server.js",
+  "author": "Walid Hosseini",
+  "license": "Copyright 2013, Hack Reactor. All rights reserved.",
+  "dependencies": {
+    "underscore": "*",
+    "express"   : "*",
+    "mysql"     : "*",
+    "request"   : "*"
+  }
+}

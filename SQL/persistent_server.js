@@ -1,21 +1,70 @@
-var mysql = require('mysql');
-/* If the node mysql module is not found on your system, you may
- * need to do an "sudo npm install -g mysql". */
 
-/* You'll need to fill the following out with your mysql username and password.
- * database: "chat" specifies that we're using the database called
- * "chat", which we created by running schema.sql.*/
-var dbConnection = mysql.createConnection({
-  user: "",
-  password: "",
-  database: "chat"
+var express = require('express');
+var db = require('./db');
+
+var app = express();
+app.use(express.static('../client'));
+app.use(express.bodyParser());
+app.listen(8082);
+
+var send404 = function(req, res, msg) {
+  console.log('Sending 404');
+  res.status(404).send(msg || 'Not found!');
+}
+
+var sendResponse = function() {
+
+};
+
+var sendHeaders = function() {
+
+};
+
+app.sourcePath = '/Users/walid/Sites/Hackreactor/2014-01-databases';
+
+app.get('/', function(request, response) {
+  response.sendfile('index.html', { 'root': app.sourcePath + '/client'});
 });
 
-dbConnection.connect();
-/* Now you can make queries to the Mysql database using the
- * dbConnection.query() method.
- * See https://github.com/felixge/node-mysql for more details about
- * using this module.*/
+app.get(/^\/classes\/(rooms|messages)/, function(request, response){
+  resource = request.url.split('/')[2];
+  console.log('resource: ', resource);
+  db.findResource(resource, function(errMsg) {
+       send404(request, response, errMsg);
+  }, function(data) {
+      console.log(data);
+      response.send(data);
+  } );
+});
 
-/* You already know how to create an http server from the previous
- * assignment; you can re-use most of that code here. */
+app.get(/^\/(room[0-9]+)/, function(request, response){
+  resource = { name: 'rooms', select: { 'roomname': request.url.slice(1) } };
+  console.log(resource);
+  db.findResource(resource, function(errMsg) {
+       send404(request, response, errMsg);
+  }, function(data) {
+      console.log(data);
+      response.send(data);
+  } );
+});
+
+app.post(/^\/classes\/(rooms|messages)/, function(request, response){
+  resource = request.url.split('/')[2];
+  console.log('resource: ', resource);
+  db.storeResource(resource, function(errMsg) {
+       send404(request, response, errMsg);
+  }, function(data) {
+      console.log(data);
+      response.send(data);
+  } );
+});
+
+app.post(/^\/(room[0-9]+)/, function(request, response){
+   resource = { name: 'rooms', select: { 'roomname': request.url.slice(1) } };
+  console.log(resource);
+  db.storeResource(resource, function(errMsg) {
+       send404(request, response, errMsg);
+  }, function(data) {
+      console.log(data);
+      response.send(data);
+  } );});
