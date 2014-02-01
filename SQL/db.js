@@ -27,7 +27,7 @@ var searchDb = function( table, select, err, cb ) {
     queryString += 'WHERE ?? = ?';
   }
   queryString = mysql.format( queryString, inserts );
-  console.log(queryString);
+  //console.log(queryString);
   dbConnection.query(queryString, function(error, data) {
     if (error) {
       err( error );
@@ -37,11 +37,18 @@ var searchDb = function( table, select, err, cb ) {
   });
 };
 
-var storeToDb = function(table, select, err, cb) {
-
+var storeToDb = function(table, data, err, cb) {
+  var queryString = 'INSERT into ' + table + ' SET ?';
+  dbConnection.query( queryString, data, function(error, result) {
+      if (error) {
+        console.log( ' POST ERROR !!');
+      } else {
+        console.log('POST Complete: ', result);
+      }
+  });
 };
 
-var validateRequest = function(resource, err, cb) {
+var validateReadRequest = function(resource, err, cb) {
   var params = {};
   if (typeof err !== 'function' || typeof cb !== 'function') {
     throw new Error('db.validateRequest(resource, err, cb): err, cb must be callable.\n');
@@ -54,7 +61,7 @@ var validateRequest = function(resource, err, cb) {
     params.select = {};
   } else {
     var p = Object.keys( resource );
-    console.log(resource);
+    //console.log(resource);
     if( (p.length !== 2) || !resource.hasOwnProperty('name') || !resource.hasOwnProperty('select') ) {
       err('db.validateRequest(resource, err, cb): Object "resource" must have string "name" and object "select" parameters\n' );
     }
@@ -67,13 +74,14 @@ var validateRequest = function(resource, err, cb) {
 };
 
 exports.findResource = function(resource, err, cb) {
-  var params = validateRequest(resource, err, cb);
+  var params = validateReadRequest(resource, err, cb);
   searchDb( params.name, params.select, err, cb);
 };
 
-exports.storeResource = function(resource) {
-  console.log('Storing resource', resource + '\n');
-}
+exports.storeResource = function(resource, data, err, cb) {
+  console.log('Storing ', data, 'to resource', resource + '\n');
+  storeToDb( resource, data, err, cb);
+};
 
 
 
