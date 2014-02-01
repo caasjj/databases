@@ -13,12 +13,14 @@ var send404 = function(req, res, msg) {
 
 app.sourcePath = '/Users/walid/Sites/Hackreactor/2014-01-databases';
 
+// get home page
 app.get('/', function(request, response) {
   response.sendfile('index.html', { 'root': app.sourcePath + '/client'});
 });
 
-app.get(/^\/classes\/(rooms|messages)/, function(request, response){
-  resource = request.url.split('/')[2];
+// get list of all rooms or all messages
+app.get(/^\/(messages)/, function(request, response){
+  resource = request.url.slice(1);
   db.findResource(resource, function(errMsg) {
        send404(request, response, errMsg);
   }, function(data) {
@@ -26,8 +28,11 @@ app.get(/^\/classes\/(rooms|messages)/, function(request, response){
     });
 });
 
-app.get(/^\/(room[0-9]+)/, function(request, response){
-  resource = { name: 'rooms', select: { 'roomname': request.url.slice(1) } };
+// get all messages for a specific room
+app.get('/rooms/:id', function(request, response){
+  console.log('You want room with id', request.params.id);
+
+  resource = { name: 'rooms', select: { 'id': request.params.id } };
    db.findResource(resource, function(errMsg) {
        send404(request, response, errMsg);
   }, function(data) {
@@ -36,8 +41,9 @@ app.get(/^\/(room[0-9]+)/, function(request, response){
   } );
 });
 
-app.post(/^\/classes\/(rooms|messages)/, function(request, response){
-  resource = request.url.split('/')[2];
+// route to create a room
+app.post('/rooms', function(request, response){
+  resource = request.url.slice(1);
   console.log('app.post: ', request.body);
   db.storeResource(resource, request.body, function(errMsg) {
        send404(request, response, errMsg);
@@ -46,7 +52,8 @@ app.post(/^\/classes\/(rooms|messages)/, function(request, response){
   });
 });
 
-app.post(/^\/(room[0-9]+)/, function(request, response){
+// post a message to a specific room
+app.post('/messages', function(request, response){
   resource = { name: 'rooms', select: { 'roomname': request.url.slice(1) } };
   db.storeResource(resource, request.body, function(errMsg) {
     send404(request, response, errMsg);

@@ -4,7 +4,7 @@ var mysql = require('mysql');
 var dbConnection = mysql.createConnection({
       user     : "tester",
       password : "test",
-      database : "chat"
+      database : "chat-split"
     });
 
 dbConnection.connect(function(err) {
@@ -59,7 +59,6 @@ var validateReadRequest = function(resource, err, cb) {
     params.select = {};
   } else {
     var p = Object.keys( resource );
-    //console.log(resource);
     if( (p.length !== 2) || !resource.hasOwnProperty('name') || !resource.hasOwnProperty('select') ) {
       err('db.validateRequest(resource, err, cb): Object "resource" must have string "name" and object "select" parameters\n' );
     }

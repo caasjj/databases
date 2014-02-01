@@ -1,0 +1,1 @@
+SELECT * FROM messages, users WHERE messages.room_id=2 AND users.username="JandDoe";
