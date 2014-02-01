@@ -9,6 +9,7 @@
     "underscore": "*",
     "express"   : "*",
     "mysql"     : "*",
-    "request"   : "*"
+    "request"   : "*",
+    "q"         : "*"
   }
 }

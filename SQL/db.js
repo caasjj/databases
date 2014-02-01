@@ -1,5 +1,6 @@
 
 var mysql = require('mysql');
+var Q = require('q');
 
 var dbConnection = mysql.createConnection({
       user     : "tester",
@@ -33,6 +34,22 @@ var searchDb = function( table, select, err, cb ) {
       cb( data );
     }
   });
+};
+
+var searchDbWithPromise = function( table, select, cb ) {
+  var queryString = 'SELECT * FROM ?? ';
+  var inserts = [ table ];
+  var keys = (typeof select === 'object') && Object.keys(select);
+  
+  if ( keys.length  > 1 ) {
+      err('"searchDb->db.findResource(resource, err, cb)": "select" must be {} or have single property.');
+  }
+  if ( keys.length ) {
+    inserts = inserts.concat(keys[0], [ select[ keys[0] ]]);
+    queryString += 'WHERE ?? = ?';
+  }
+  queryString = mysql.format( queryString, inserts );
+  dbConnection.query(queryString, cb) ; 
 };
 
 var storeToDb = function(table, data, err, cb) {
@@ -73,6 +90,21 @@ var validateReadRequest = function(resource, err, cb) {
 exports.findResource = function(resource, err, cb) {
   var params = validateReadRequest(resource, err, cb);
   searchDb( params.name, params.select, err, cb);
+
+};
+
+exports.findResourceWithPromise = function(resource) {
+  var deferred = Q.defer();
+  var err = cb = function() {};
+  var params = validateReadRequest(resource, err, cb);
+  searchDbWithPromise( params.name, params.select, function(err, data) {
+      if (err) {
+        deferred.reject( err );
+      } else {
+        deferred.resolve(data);
+      }
+    });
+  return deferred.promise;
 };
 
 exports.storeResource = function(resource, data, err, cb) {
