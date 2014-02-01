@@ -14,29 +14,7 @@ dbConnection.connect(function(err) {
   }
 });
 
-var searchDb = function( table, select, err, cb ) {
-  var queryString = 'SELECT * FROM ?? ';
-  var inserts = [ table ];
-  var keys = (typeof select === 'object') && Object.keys(select);
-  
-  if ( keys.length  > 1 ) {
-      err('"searchDb->db.findResource(resource, err, cb)": "select" must be {} or have single property.');
-  }
-  if ( keys.length ) {
-    inserts = inserts.concat(keys[0], [ select[ keys[0] ]]);
-    queryString += 'WHERE ?? = ?';
-  }
-  queryString = mysql.format( queryString, inserts );
-  dbConnection.query(queryString, function(error, data) {
-    if (error) {
-      err( error );
-    } else {
-      cb( data );
-    }
-  });
-};
-
-var searchDbWithPromise = function( table, select, cb ) {
+var searchDb = function( table, select, cb ) {
   var queryString = 'SELECT * FROM ?? ';
   var inserts = [ table ];
   var keys = (typeof select === 'object') && Object.keys(select);
@@ -63,11 +41,9 @@ var storeToDb = function(table, data, err, cb) {
   });
 };
 
-var validateReadRequest = function(resource, err, cb) {
+var validateReadRequest = function(resource) {
   var params = {};
-  if (typeof err !== 'function' || typeof cb !== 'function') {
-    throw new Error('db.validateRequest(resource, err, cb): err, cb must be callable.\n');
-  }
+
   if (typeof resource === 'string' ) {
     if (['rooms', 'messages', 'users'].indexOf(resource) < 0) {
       err('db.validateRequest(resource, err, cb): string "resource" must be "messages"|"rooms"|"users"\n');
@@ -87,17 +63,10 @@ var validateReadRequest = function(resource, err, cb) {
   return params;
 };
 
-exports.findResource = function(resource, err, cb) {
-  var params = validateReadRequest(resource, err, cb);
-  searchDb( params.name, params.select, err, cb);
-
-};
-
-exports.findResourceWithPromise = function(resource) {
+exports.findResource = function(resource) {
   var deferred = Q.defer();
-  var err = cb = function() {};
-  var params = validateReadRequest(resource, err, cb);
-  searchDbWithPromise( params.name, params.select, function(err, data) {
+  var params = validateReadRequest(resource);
+  searchDb( params.name, params.select, function(err, data) {
       if (err) {
         deferred.reject( err );
       } else {
